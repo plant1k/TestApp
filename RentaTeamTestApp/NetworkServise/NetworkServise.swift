@@ -14,8 +14,8 @@ protocol NetworkServiseProtocol {
 final class NetworkServise: NetworkServiseProtocol {
     
     func fetchData(completion: @escaping (Result<PhotoData?, Error>) -> Void) {
-        let urlString = Constants.url
-        guard let url = URL(string: urlString) else { return }
+        
+        guard let url = URL(string: Constants.url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             DispatchQueue.main.async {
@@ -27,9 +27,8 @@ final class NetworkServise: NetworkServiseProtocol {
                 do {
                     guard let data = data else { return }
                     print(data)
-                    let unsplashData = try JSONDecoder().decode(PhotoData.self, from: data)
-                    completion(.success(unsplashData))
-                    print(unsplashData)
+                    let json = try JSONDecoder().decode(PhotoData.self, from: data)
+                    completion(.success(json))
                 } catch {
                     completion(.failure(error))
                 }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="RentaTeamTestApp" customModuleProvider="target">
+            <connections>
+                <outlet property="downloadCountLabel" destination="awZ-6f-Apk" id="nTT-dt-WtQ"/>
+                <outlet property="imagePhoto" destination="Xwd-mT-57P" id="Rs8-Dh-Frl"/>
+                <outlet property="indicator" destination="vzY-V9-oWV" id="u74-Mb-Djb"/>
+                <outlet property="likeCountLabel" destination="lMb-hc-7jD" id="lvo-WK-FdN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-V9-oWV">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xwd-mT-57P">
+                    <rect key="frame" x="1" y="162" width="374" height="344"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="374" id="YG3-Ic-e8d"/>
+                        <constraint firstAttribute="height" constant="344" id="dOH-dy-fcz"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="love" translatesAutoresizingMaskIntoConstraints="NO" id="cVe-yO-BYt">
+                    <rect key="frame" x="20" y="535" width="55" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="43v-K2-VSL"/>
+                        <constraint firstAttribute="height" constant="35" id="JAH-AC-rpp"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awZ-6f-Apk">
+                    <rect key="frame" x="83" y="542" width="91" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="91" id="OQ8-ID-uTO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="TBh-gB-98l">
+                    <rect key="frame" x="217" y="535" width="68" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="c7C-x5-ynE"/>
+                        <constraint firstAttribute="width" constant="68" id="sRN-nG-q4E"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-hc-7jD">
+                    <rect key="frame" x="299" y="542" width="56" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="56" id="nvw-f8-KYv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="cVe-yO-BYt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="K1i-0T-FfI"/>
+                <constraint firstItem="awZ-6f-Apk" firstAttribute="top" secondItem="Xwd-mT-57P" secondAttribute="bottom" constant="36" id="KND-z3-iJ3"/>
+                <constraint firstItem="vzY-V9-oWV" firstAttribute="centerY" secondItem="Xwd-mT-57P" secondAttribute="centerY" id="OoC-VF-kUI"/>
+                <constraint firstItem="cVe-yO-BYt" firstAttribute="top" secondItem="Xwd-mT-57P" secondAttribute="bottom" constant="29" id="Y18-v2-RPX"/>
+                <constraint firstItem="lMb-hc-7jD" firstAttribute="top" secondItem="Xwd-mT-57P" secondAttribute="bottom" constant="36" id="c16-2Z-7qR"/>
+                <constraint firstItem="TBh-gB-98l" firstAttribute="top" secondItem="Xwd-mT-57P" secondAttribute="bottom" constant="29" id="cqe-m8-BVt"/>
+                <constraint firstItem="lMb-hc-7jD" firstAttribute="leading" secondItem="TBh-gB-98l" secondAttribute="trailing" constant="14" id="fWb-XX-gPi"/>
+                <constraint firstItem="Xwd-mT-57P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gB4-0D-1nI"/>
+                <constraint firstItem="awZ-6f-Apk" firstAttribute="leading" secondItem="cVe-yO-BYt" secondAttribute="trailing" constant="8" symbolic="YES" id="ooz-CV-SWG"/>
+                <constraint firstItem="vzY-V9-oWV" firstAttribute="centerX" secondItem="Xwd-mT-57P" secondAttribute="centerX" id="r2i-3F-QK8"/>
+                <constraint firstItem="Xwd-mT-57P" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rVV-Ud-I3U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lMb-hc-7jD" secondAttribute="trailing" constant="20" id="yYz-rJ-sRf"/>
+            </constraints>
+            <point key="canvasLocation" x="56.521739130434788" y="81.696428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="download" width="512" height="512"/>
+        <image name="love" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

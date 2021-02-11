@@ -3,11 +3,11 @@ import Foundation
 // MARK: - Welcome
 struct PhotoData: Codable {
     let total, totalHits: Int
-    let hits: [Hit]
+    let hits: [Photo]
 }
 
 // MARK: - Hit
-struct Hit: Codable {
+struct Photo: Codable {
     let id: Int
     let pageURL: String
     let type: TypeEnum
