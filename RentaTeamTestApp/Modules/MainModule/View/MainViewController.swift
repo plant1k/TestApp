@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     //MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
@@ -47,13 +47,13 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.photoData?.hits.count ?? 0
+        return presenter.photos?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionViewCellIdentifier, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
-        cell.setupCollectionViewCell(by: (presenter.photoData?.hits[indexPath.row])!)
+        cell.setupCollectionViewCell(by: (presenter.photos![indexPath.row]))
         return cell
     }
 }
@@ -80,9 +80,16 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photo = presenter.photoData?.hits[indexPath.row]
+        let photo = presenter.photos?[indexPath.row]
         let detailViewController = ModelBuilder.createDetainModule(photo: photo)
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let indexCount = presenter.photos?.count else { return }
+        if indexPath.row == indexCount - 1 {
+            print("fetch Data")
+        }
     }
 }
 

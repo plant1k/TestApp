@@ -19,7 +19,7 @@ protocol DetailViewPresenterProtocol: class {
     var photo: Photo? { get set }
 }
 
-class DetailPresenter: DetailViewPresenterProtocol {
+final class DetailPresenter: DetailViewPresenterProtocol {
     
     weak var view: DetailViewProtocol?
     let networkServise: NetworkServiseProtocol?
@@ -33,16 +33,17 @@ class DetailPresenter: DetailViewPresenterProtocol {
     }
     
     private func getPhoto() {
-        guard let url = photo?.largeImageURL, let imageUrl = URL(string: url) else { return }
+        guard let url = photo?.largeImageURL else { return }
         
-        DispatchQueue.global().async {
-            if let imageData = try? Data(contentsOf: imageUrl) {
-                DispatchQueue.main.async {
-                    let photo = UIImage(data: imageData)
-                    self.view?.setupImage(image: photo)
-                }
+        networkServise?.fetchImage(from: url, completion: { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let image):
+                self.view?.setupImage(image: image)
+            case .failure(let error):
+                print (error.localizedDescription)
             }
-        }
+        })
     }
     
     public func setupUI() {

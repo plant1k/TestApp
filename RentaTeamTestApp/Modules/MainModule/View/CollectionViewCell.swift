@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
     
 //MARK: - IBOutlet
     @IBOutlet weak var photoView: UIImageView!
@@ -23,6 +23,9 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
 //MARK: - Private
+    
+    private var networkServise = NetworkServise()
+    
     private var imageURL: String? {
         didSet {
             photoView?.image = nil
@@ -30,21 +33,22 @@ class CollectionViewCell: UICollectionViewCell {
         }
     }
     
-//MARK: - Private Methods
-     private func updateUI() {
-        guard let url = imageURL, let imageUrl = URL(string: url) else { return }
+    //MARK: - Private Methods
+    private func updateUI() {
         
         activityIndicator.startAnimating()
         
-        DispatchQueue.global().async {
-            if let imageData = try? Data(contentsOf: imageUrl) {
-                DispatchQueue.main.async {
-                    self.photoView.image = UIImage(data: imageData)
-                    self.activityIndicator.stopAnimating()
-                    self.activityIndicator.isHidden = true
-                }
+        networkServise.fetchImage(from: imageURL, completion: { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let image):
+                self.photoView.image = image
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+            case .failure(let error):
+                print (error.localizedDescription)
             }
-        }
+        })
     }
 
 // MARK: - Public Methods

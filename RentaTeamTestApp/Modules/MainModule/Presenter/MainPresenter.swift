@@ -15,14 +15,14 @@ protocol MainViewProtocol: class {
 protocol MainViewPresenterProtocol: class {
     init(view: MainViewProtocol, networkServise: NetworkServiseProtocol)
     func getData()
-    var photoData: PhotoData? { get set }
+    var photos: [Photo]? { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     
     weak var view: MainViewProtocol?
     let networkServise: NetworkServiseProtocol?
-    var photoData: PhotoData?
+    var photos: [Photo]?
     
     required init(view: MainViewProtocol, networkServise: NetworkServiseProtocol) {
         self.view = view
@@ -36,7 +36,7 @@ class MainPresenter: MainViewPresenterProtocol {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    self.photoData = data
+                    self.photos = data
                     self.view?.succes()
                 case .failure(let error):
                     self.view?.failure(error: error)
