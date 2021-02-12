@@ -24,8 +24,8 @@ final class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if !isNavigationBarSetuped {
-            // first setup for navBar
             setNavigationBar()
             isNavigationBarSetuped = true
         }
@@ -51,14 +51,13 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionViewCellIdentifier, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
         cell.setupCollectionViewCell(by: (presenter.photos[indexPath.row]))
         return cell
     }
 }
 
-// MARK: -UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -81,6 +80,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photo = presenter.photos[indexPath.row]
+        
         let detailViewController = ModelBuilder.createDetainModule(photo: photo)
         navigationController?.pushViewController(detailViewController, animated: true)
     }

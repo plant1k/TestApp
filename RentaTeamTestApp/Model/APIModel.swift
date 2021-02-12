@@ -1,11 +1,11 @@
 import Foundation
 
-// MARK: - Welcome
+// MARK: - PhotoData
 struct PhotoData: Codable {
     let hits: [Photo]
 }
 
-// MARK: - Hit
+// MARK: - Photo
 struct Photo: Codable {
     let largeImageURL: String
     let downloads, likes: Int

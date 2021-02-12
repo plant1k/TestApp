@@ -9,9 +9,7 @@ import UIKit
 
 protocol NetworkServiseProtocol {
     func fetchData(page: Int, completion: @escaping (Result<[Photo], Error>) -> Void)
-    
     func fetchImage(from url: String?, completion: @escaping (Result<UIImage?,Error>) -> ())
-    
     var imageCache: NSCache<NSString, UIImage> { get set }
 }
 
@@ -50,7 +48,6 @@ final class NetworkServise: NetworkServiseProtocol {
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             completion(.success(cachedImage))
         } else {
-            
             URLSession.shared.dataTask(with: url) { (data, _, error) in
                 DispatchQueue.main.async {
                     if let error = error {

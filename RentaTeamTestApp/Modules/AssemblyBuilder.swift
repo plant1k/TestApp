@@ -12,7 +12,7 @@ protocol Builder {
     static func createDetainModule(photo: Photo?) -> DetailViewController
 }
 
-class ModelBuilder: Builder {
+final class ModelBuilder: Builder {
     static func createMainModule() -> MainViewController {
         let view = MainViewController()
         let networkServise = NetworkServise()

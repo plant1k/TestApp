@@ -34,7 +34,6 @@ final class CollectionViewCell: UICollectionViewCell {
     
     //MARK: - Private Methods
     private func updateUI() {
-        
         activityIndicator.startAnimating()
         
         networkServise.fetchImage(from: imageURL, completion: { [weak self] (result) in

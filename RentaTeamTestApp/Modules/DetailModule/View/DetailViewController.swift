@@ -9,7 +9,7 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
-    
+//MARK: - IBOutlet
     @IBOutlet weak var downloadCountLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var imagePhoto: UIImageView!
@@ -22,10 +22,11 @@ final class DetailViewController: UIViewController {
             }
         }
     }
-   
     
+//MARK: - Propirties
     var presenter: DetailViewPresenterProtocol?
     
+//MARK: - UIViewControllerLifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.startAnimating()
@@ -33,6 +34,7 @@ final class DetailViewController: UIViewController {
     }
 }
 
+//MARK: - Extension
 extension DetailViewController: DetailViewProtocol {
     func setupImage(image: UIImage?) {
         imagePhoto.image = image

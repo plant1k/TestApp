@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Protocols
 protocol DetailViewProtocol: class {
     func setupImage(image: UIImage?)
     func setPhotoData(photo: Photo?)
@@ -20,7 +21,7 @@ protocol DetailViewPresenterProtocol: class {
 }
 
 final class DetailPresenter: DetailViewPresenterProtocol {
-    
+//MARK: - Propirties
     weak var view: DetailViewProtocol?
     let networkServise: NetworkServiseProtocol?
     var photo: Photo?
@@ -32,6 +33,7 @@ final class DetailPresenter: DetailViewPresenterProtocol {
         self.photo = photo
     }
     
+//MARK: - Private Func
     private func getPhoto() {
         guard let url = photo?.largeImageURL else { return }
         
@@ -45,7 +47,8 @@ final class DetailPresenter: DetailViewPresenterProtocol {
             }
         })
     }
-    
+ 
+//MARK: - Public Func
     public func setupUI() {
         view?.setPhotoData(photo: photo)
         getPhoto()
