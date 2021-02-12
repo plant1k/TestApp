@@ -8,17 +8,15 @@
 import UIKit
 
 protocol NetworkServiseProtocol {
-    func fetchData(completion: @escaping (Result<[Photo]?, Error>) -> Void)
+    func fetchData(completion: @escaping (Result<[Photo], Error>) -> Void)
     
     func fetchImage(from url: String?, completion: @escaping (Result<UIImage?,Error>) -> ())
 }
 
 final class NetworkServise: NetworkServiseProtocol {
     
-    func fetchData(completion: @escaping (Result<[Photo]?, Error>) -> Void) {
+    func fetchData(completion: @escaping (Result<[Photo], Error>) -> Void) {
        
-        //var photos = [Photo]()
-        
         guard let url = URL(string: Constants.url) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
