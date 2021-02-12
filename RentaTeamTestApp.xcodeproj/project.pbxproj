@@ -24,6 +24,7 @@
 		0764013625D51BDA0063122C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0764013425D51BDA0063122C /* DetailViewController.xib */; };
 		076BA77A25D40741007B32DE /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BA77925D40741007B32DE /* MainPresenter.swift */; };
 		076BA78425D40D6C007B32DE /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BA78325D40D6C007B32DE /* AssemblyBuilder.swift */; };
+		0773238225D6B3450004DEBE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773238125D6B3450004DEBE /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		0764013425D51BDA0063122C /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		076BA77925D40741007B32DE /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		076BA78325D40D6C007B32DE /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
+		0773238125D6B3450004DEBE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				074918F925D402820051530C /* MainModule */,
 				076BA77C25D409EC007B32DE /* DetailModule */,
+				0773238125D6B3450004DEBE /* Router.swift */,
 				076BA78325D40D6C007B32DE /* AssemblyBuilder.swift */,
 			);
 			path = Modules;
@@ -257,6 +260,7 @@
 				0764012925D455180063122C /* MainViewController.swift in Sources */,
 				074918E725D3EB1F0051530C /* Constants.swift in Sources */,
 				0764012425D43DDB0063122C /* CollectionViewCell.swift in Sources */,
+				0773238225D6B3450004DEBE /* Router.swift in Sources */,
 				0764013125D51B6A0063122C /* DetailPresenter.swift in Sources */,
 				074918CC25D3E5B50051530C /* AppDelegate.swift in Sources */,
 				074918E225D3E6720051530C /* NetworkServise.swift in Sources */,

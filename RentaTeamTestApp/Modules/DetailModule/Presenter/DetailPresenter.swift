@@ -14,23 +14,24 @@ protocol DetailViewProtocol: class {
 }
 
 protocol DetailViewPresenterProtocol: class {
-    init(view: DetailViewProtocol?, networkServise: NetworkServiseProtocol?, photo: Photo?)
+    init(view: DetailViewProtocol?, networkServise: NetworkServiseProtocol?, router: RouterProtocol, photo: Photo?)
     func setupUI()
-    
     var photo: Photo? { get set }
 }
 
 final class DetailPresenter: DetailViewPresenterProtocol {
 //MARK: - Propirties
     weak var view: DetailViewProtocol?
+    let router: RouterProtocol
     let networkServise: NetworkServiseProtocol?
     var photo: Photo?
     
-    required init(view: DetailViewProtocol?, networkServise: NetworkServiseProtocol?, photo: Photo?) {
+    required init(view: DetailViewProtocol?, networkServise: NetworkServiseProtocol?, router: RouterProtocol, photo: Photo?) {
         
         self.view = view
         self.networkServise = networkServise
         self.photo = photo
+        self.router = router
     }
     
 //MARK: - Private Func

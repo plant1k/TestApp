@@ -80,9 +80,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photo = presenter.photos[indexPath.row]
-        
-        let detailViewController = ModelBuilder.createDetainModule(photo: photo)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        presenter.tapOnPhoto(photo: photo)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

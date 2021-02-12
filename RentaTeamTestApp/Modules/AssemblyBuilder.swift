@@ -7,24 +7,24 @@
 
 import UIKit
 
-protocol Builder {
-    static func createMainModule() -> MainViewController
-    static func createDetainModule(photo: Photo?) -> DetailViewController
+protocol AssemblyBuilderProtocol {
+    func createMainModule(router: RouterProtocol) -> MainViewController
+    func createDetainModule(router: RouterProtocol, photo: Photo?) -> DetailViewController
 }
 
-final class ModelBuilder: Builder {
-    static func createMainModule() -> MainViewController {
+final class AssemblyModelBuilder: AssemblyBuilderProtocol {
+    func createMainModule(router: RouterProtocol) -> MainViewController {
         let view = MainViewController()
         let networkServise = NetworkServise()
-        let presenter = MainPresenter(view: view, networkServise: networkServise)
+        let presenter = MainPresenter(view: view, networkServise: networkServise, router: router)
         view.presenter = presenter
         return view
     }
     
-    static func createDetainModule(photo: Photo?) -> DetailViewController {
+    func createDetainModule(router: RouterProtocol, photo: Photo?) -> DetailViewController {
         let view = DetailViewController()
         let networkServise = NetworkServise()
-        let presenter = DetailPresenter(view: view, networkServise: networkServise, photo: photo)
+        let presenter = DetailPresenter(view: view, networkServise: networkServise, router: router, photo: photo)
         view.presenter = presenter
         return view
     }

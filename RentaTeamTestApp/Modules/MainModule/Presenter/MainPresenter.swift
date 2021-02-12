@@ -13,21 +13,27 @@ protocol MainViewProtocol: class {
 }
 
 protocol MainViewPresenterProtocol: class {
-    init(view: MainViewProtocol, networkServise: NetworkServiseProtocol)
+    init(view: MainViewProtocol, networkServise: NetworkServiseProtocol, router: RouterProtocol)
     func getData()
+    func tapOnPhoto(photo: Photo?)
     var photos: [Photo] { get set }
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
-    
     weak var view: MainViewProtocol?
+    let router: RouterProtocol?
     let networkServise: NetworkServiseProtocol?
     var photos = [Photo]()
     
-    required init(view: MainViewProtocol, networkServise: NetworkServiseProtocol) {
+    required init(view: MainViewProtocol, networkServise: NetworkServiseProtocol, router: RouterProtocol) {
         self.view = view
         self.networkServise = networkServise
+        self.router = router
         getData()
+    }
+    
+    func tapOnPhoto(photo: Photo?) {
+        router?.showDetail(photo: photo)
     }
     
     func getData() {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Protocol
 protocol NetworkServiseProtocol {
     func fetchData(page: Int, completion: @escaping (Result<[Photo], Error>) -> Void)
     func fetchImage(from url: String?, completion: @escaping (Result<UIImage?,Error>) -> ())
@@ -17,8 +18,8 @@ final class NetworkServise: NetworkServiseProtocol {
     
     var imageCache = NSCache<NSString, UIImage>()
     
+//MARK: - Public Func
     func fetchData(page: Int, completion: @escaping (Result<[Photo], Error>) -> Void) {
-        
         guard let url = URL(string: Constants.url + "\(page)") else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -42,7 +43,6 @@ final class NetworkServise: NetworkServiseProtocol {
     }
     
     func fetchImage(from urlString: String?, completion: @escaping (Result<UIImage?,Error>) -> ()) {
-        
         guard let fetchUrl = urlString, let url = URL(string: fetchUrl) else { return }
         
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
@@ -64,6 +64,3 @@ final class NetworkServise: NetworkServiseProtocol {
         }
     }
 }
-
-
-
