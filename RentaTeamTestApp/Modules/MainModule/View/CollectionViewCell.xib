@@ -17,31 +17,33 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-RJ-qAZ">
-                        <rect key="frame" x="5" y="20" width="190" height="190"/>
+                        <rect key="frame" x="5" y="10" width="190" height="190"/>
                         <color key="backgroundColor" red="0.55416029690000002" green="0.87879741190000005" blue="0.66024559739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="190" id="4Z4-aB-Qwv"/>
+                            <constraint firstAttribute="height" constant="190" id="jya-0s-wKs"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqa-He-2K8">
-                        <rect key="frame" x="0.0" y="216" width="200" height="20"/>
+                        <rect key="frame" x="0.0" y="206" width="200" height="20"/>
                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mDN-um-UGj">
-                        <rect key="frame" x="90" y="107" width="20" height="20"/>
+                        <rect key="frame" x="90" y="95" width="20" height="20"/>
                     </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="mDN-um-UGj" firstAttribute="centerX" secondItem="GFC-RJ-qAZ" secondAttribute="centerX" id="4W6-hm-bma"/>
-                <constraint firstItem="GFC-RJ-qAZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="7W1-SB-98D"/>
-                <constraint firstAttribute="trailing" secondItem="dqa-He-2K8" secondAttribute="trailing" id="FG2-wW-Vig"/>
-                <constraint firstItem="GFC-RJ-qAZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="HSU-1w-6iV"/>
-                <constraint firstItem="dqa-He-2K8" firstAttribute="top" secondItem="GFC-RJ-qAZ" secondAttribute="bottom" constant="6" id="JuP-yh-LH2"/>
-                <constraint firstItem="mDN-um-UGj" firstAttribute="centerY" secondItem="GFC-RJ-qAZ" secondAttribute="centerY" constant="2" id="gst-f9-Z5W"/>
-                <constraint firstAttribute="bottom" secondItem="dqa-He-2K8" secondAttribute="bottom" constant="20" id="i7D-rC-bsH"/>
-                <constraint firstAttribute="trailing" secondItem="GFC-RJ-qAZ" secondAttribute="trailing" constant="5" id="lyz-tz-vot"/>
-                <constraint firstItem="dqa-He-2K8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tuW-Nc-JdO"/>
+                <constraint firstItem="GFC-RJ-qAZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Bon-6y-HW4"/>
+                <constraint firstAttribute="trailing" secondItem="GFC-RJ-qAZ" secondAttribute="trailing" constant="5" id="OhK-jy-Nwq"/>
+                <constraint firstItem="dqa-He-2K8" firstAttribute="top" secondItem="GFC-RJ-qAZ" secondAttribute="bottom" constant="6" id="UOo-tY-uY2"/>
+                <constraint firstAttribute="trailing" secondItem="dqa-He-2K8" secondAttribute="trailing" id="ZtQ-HF-vkX"/>
+                <constraint firstItem="dqa-He-2K8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ajR-wd-kEL"/>
+                <constraint firstItem="mDN-um-UGj" firstAttribute="centerX" secondItem="GFC-RJ-qAZ" secondAttribute="centerX" id="u73-db-t48"/>
+                <constraint firstItem="mDN-um-UGj" firstAttribute="centerY" secondItem="GFC-RJ-qAZ" secondAttribute="centerY" id="vv1-WH-myE"/>
             </constraints>
             <size key="customSize" width="175" height="327"/>
             <connections>

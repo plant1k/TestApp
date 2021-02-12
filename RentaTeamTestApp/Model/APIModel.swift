@@ -10,9 +10,10 @@ struct Photo: Codable {
     let largeImageURL: String
     let downloads, likes: Int
     let user: String
+    let previewURL: String
     
     enum CodingKeys: String, CodingKey {
-        case largeImageURL, downloads, likes
+        case largeImageURL, downloads, likes, previewURL
         case user
     }
 }

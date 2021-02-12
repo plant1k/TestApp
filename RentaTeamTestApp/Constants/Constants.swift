@@ -8,15 +8,10 @@
 import Foundation
 
 enum Constants {
-    static var page = 2
-    
-    static func updataPage() {
-        page += 1
-    }
-    
+    static var page = 1
     static let collectionViewCellIdentifier = "CollectionViewCell"
     static let cellIdentifier = "Cell"
     static let userKey = "20230186-5ddf2e10f5c6f0d99e4f58559"
-    static let url = "https://pixabay.com/api/?key=\(Constants.userKey)&q=car&image_type=photo&page=\(Constants.page)"
+    static let url = "https://pixabay.com/api/?key=\(Constants.userKey)&q=car&image_type=photo&page="
     static let navigationBarTitle = "RentaTeam Test App"
 }

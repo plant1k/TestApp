@@ -86,11 +86,8 @@ extension MainViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let indexCount = presenter.photos.count
-        if indexPath.row == indexCount - 1 {
-            print("Fetch Data")
-            print(Constants.page)
-            print(Constants.url)
+        if indexPath.row == presenter.photos.count - 1 {
+            print("Fetch Data page = \(Constants.page)")
             presenter.getData()
         }
     }

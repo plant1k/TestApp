@@ -23,7 +23,6 @@ final class CollectionViewCell: UICollectionViewCell {
     }
     
 //MARK: - Private
-    
     private var networkServise = NetworkServise()
     
     private var imageURL: String? {

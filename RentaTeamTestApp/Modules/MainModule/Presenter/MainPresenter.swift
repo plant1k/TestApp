@@ -18,7 +18,7 @@ protocol MainViewPresenterProtocol: class {
     var photos: [Photo] { get set }
 }
 
-class MainPresenter: MainViewPresenterProtocol {
+final class MainPresenter: MainViewPresenterProtocol {
     
     weak var view: MainViewProtocol?
     let networkServise: NetworkServiseProtocol?
@@ -31,7 +31,7 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func getData() {
-        networkServise?.fetchData { [weak self] (result) in
+        networkServise?.fetchData(page: Constants.page) { [weak self] (result) in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
@@ -43,6 +43,6 @@ class MainPresenter: MainViewPresenterProtocol {
                 }
             }
         }
-        Constants.updataPage()
+        Constants.page += 1
     }
 }
