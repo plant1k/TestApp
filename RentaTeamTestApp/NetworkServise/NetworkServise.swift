@@ -7,7 +7,7 @@
 
 import UIKit
 
-//MARK: - Protocol
+    //MARK: - Protocol
 protocol NetworkServiseProtocol {
     func fetchData(page: Int, completion: @escaping (Result<[Photo], Error>) -> Void)
     func fetchImage(from url: String?, completion: @escaping (Result<UIImage?,Error>) -> ())
@@ -18,7 +18,7 @@ final class NetworkServise: NetworkServiseProtocol {
     
     var imageCache = NSCache<NSString, UIImage>()
     
-//MARK: - Public Func
+    // MARK: - Methods
     func fetchData(page: Int, completion: @escaping (Result<[Photo], Error>) -> Void) {
         guard let url = URL(string: Constants.url + "\(page)") else { return }
         

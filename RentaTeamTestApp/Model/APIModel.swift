@@ -12,12 +12,13 @@ struct Photo: Codable {
     let user: String
     let previewURL: String
     
+    // MARK: - CodingKeys
     enum CodingKeys: String, CodingKey {
         case largeImageURL, downloads, likes, previewURL
         case user
     }
 }
-
+// MARK: - TypeEnum
 enum TypeEnum: String, Codable {
     case photo = "photo"
 }

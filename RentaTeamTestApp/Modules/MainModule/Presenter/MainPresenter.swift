@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Protocol
 protocol MainViewProtocol: class {
     func succes()
     func failure(error: Error)
@@ -20,11 +21,13 @@ protocol MainViewPresenterProtocol: class {
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
+    // MARK: - Properties
     weak var view: MainViewProtocol?
     let router: RouterProtocol?
     let networkServise: NetworkServiseProtocol?
     var photos = [Photo]()
     
+    //MARK: - Initializer
     required init(view: MainViewProtocol, networkServise: NetworkServiseProtocol, router: RouterProtocol) {
         self.view = view
         self.networkServise = networkServise
@@ -32,6 +35,7 @@ final class MainPresenter: MainViewPresenterProtocol {
         getData()
     }
     
+    // MARK: - Methods
     func tapOnPhoto(photo: Photo?) {
         router?.showDetail(photo: photo)
     }

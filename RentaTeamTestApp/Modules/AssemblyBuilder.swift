@@ -7,12 +7,15 @@
 
 import UIKit
 
+    //MARK: - Protocols
 protocol AssemblyBuilderProtocol {
     func createMainModule(router: RouterProtocol) -> MainViewController
     func createDetainModule(router: RouterProtocol, photo: Photo?) -> DetailViewController
 }
 
 final class AssemblyModelBuilder: AssemblyBuilderProtocol {
+    
+    //MARK: - Methods
     func createMainModule(router: RouterProtocol) -> MainViewController {
         let view = MainViewController()
         let networkServise = NetworkServise()

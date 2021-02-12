@@ -80,15 +80,13 @@
 		074918CA25D3E5B50051530C /* RentaTeamTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				0773238525D6C2180004DEBE /* Resources */,
 				074918F025D3EC390051530C /* Model */,
 				076BA78225D40D5A007B32DE /* Modules */,
 				074918E525D3EAE80051530C /* Constants */,
 				074918E025D3E65D0051530C /* NetworkServise */,
 				074918CB25D3E5B50051530C /* AppDelegate.swift */,
 				074918CD25D3E5B50051530C /* SceneDelegate.swift */,
-				074918D125D3E5B50051530C /* Main.storyboard */,
-				074918D425D3E5BB0051530C /* Assets.xcassets */,
-				074918D625D3E5BB0051530C /* LaunchScreen.storyboard */,
 				074918D925D3E5BB0051530C /* Info.plist */,
 			);
 			path = RentaTeamTestApp;
@@ -181,6 +179,16 @@
 				076BA78325D40D6C007B32DE /* AssemblyBuilder.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		0773238525D6C2180004DEBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				074918D125D3E5B50051530C /* Main.storyboard */,
+				074918D425D3E5BB0051530C /* Assets.xcassets */,
+				074918D625D3E5BB0051530C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

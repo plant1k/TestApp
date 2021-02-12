@@ -9,7 +9,7 @@ import UIKit
 
 final class CollectionViewCell: UICollectionViewCell {
     
-//MARK: - IBOutlet
+    //MARK: - IBOutlet
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var photoName: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
@@ -22,7 +22,7 @@ final class CollectionViewCell: UICollectionViewCell {
         }
     }
     
-//MARK: - Private
+    //MARK: - Private
     private var networkServise = NetworkServise()
     
     private var imageURL: String? {
