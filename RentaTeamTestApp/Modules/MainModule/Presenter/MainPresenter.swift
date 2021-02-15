@@ -43,14 +43,12 @@ final class MainPresenter: MainViewPresenterProtocol {
     func getData() {
         networkServise?.fetchData(page: Constants.page) { [weak self] (result) in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let data):
-                    self.photos.append(contentsOf: data)
-                    self.view?.succes()
-                case .failure(let error):
-                    self.view?.failure(error: error)
-                }
+            switch result {
+            case .success(let data):
+                self.photos.append(contentsOf: data)
+                self.view?.succes()
+            case .failure(let error):
+                self.view?.failure(error: error)
             }
         }
         Constants.page += 1

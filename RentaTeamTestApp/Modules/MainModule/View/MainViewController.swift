@@ -30,6 +30,7 @@ final class MainViewController: UIViewController {
             isNavigationBarSetuped = true
         }
     }
+    
     // MARK: - Private Methods
     private func setupCollectionView() {
         collectionView.register(UINib(nibName: Constants.collectionViewCellIdentifier, bundle: nil), forCellWithReuseIdentifier: Constants.collectionViewCellIdentifier)
